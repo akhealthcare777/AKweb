@@ -1,29 +1,41 @@
-import React from "react";
+import React, { useState } from "react";
 
 const ContactSection = () => {
+  const [status, setStatus] = useState("");
+  const [loading, setLoading] = useState(false);
+
   const onSubmit = async (event) => {
     event.preventDefault();
+    setLoading(true);
+    setStatus("");
+
     const formData = new FormData(event.target);
     formData.append("access_key", "739dd0e6-3904-4615-be3f-29878e3dd49e");
 
     const object = Object.fromEntries(formData);
     const json = JSON.stringify(object);
 
-    const res = await fetch("https://api.web3forms.com/submit", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        Accept: "application/json",
-      },
-      body: json,
-    }).then((res) => res.json());
+    try {
+      const res = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: json,
+      }).then((res) => res.json());
 
-    if (res.success) {
-      alert("✅ Message Sent Successfully!");
-      event.target.reset();
-    } else {
-      alert("❌ Something went wrong. Please try again.");
+      if (res.success) {
+        setStatus("✅ Message Sent Successfully!");
+        event.target.reset();
+      } else {
+        setStatus("❌ Something went wrong. Please try again.");
+      }
+    } catch (error) {
+      setStatus("⚠️ Network error. Please try again later.");
     }
+
+    setLoading(false);
   };
 
   return (
@@ -52,48 +64,71 @@ const ContactSection = () => {
               name="name"
               required
               placeholder="Your Name"
-              className="w-full rounded-xl border border-green-200 p-4 focus:ring-2 focus:ring-green-400 focus:outline-none"
+              className="w-full rounded-xl border border-green-200 p-4 focus:ring-2 focus:ring-green-500 focus:outline-none transition-all duration-300"
             />
           </div>
 
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">Contact Number <span className="text-red-500">*</span></label>
+            <label className="block text-sm font-medium text-gray-700 mb-1">
+              Contact Number <span className="text-red-500">*</span>
+            </label>
             <input
               type="tel"
               name="phone"
+              required
               placeholder="Your Phone Number"
-              className="w-full rounded-xl border border-green-200 p-4 focus:ring-2 focus:ring-green-400 focus:outline-none"
+              className="w-full rounded-xl border border-green-200 p-4 focus:ring-2 focus:ring-green-500 focus:outline-none transition-all duration-300"
             />
           </div>
 
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">Email</label>
+            <label className="block text-sm font-medium text-gray-700 mb-1">
+              Email
+            </label>
             <input
               type="email"
               name="email"
-              required
               placeholder="Your Email"
-              className="w-full rounded-xl border border-green-200 p-4 focus:ring-2 focus:ring-green-400 focus:outline-none"
+              className="w-full rounded-xl border border-green-200 p-4 focus:ring-2 focus:ring-green-500 focus:outline-none transition-all duration-300"
             />
           </div>
 
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">Message</label>
+            <label className="block text-sm font-medium text-gray-700 mb-1">
+              Message (Optional)
+            </label>
             <textarea
               name="message"
               rows="5"
-              required
-              placeholder="Your Message"
-              className="w-full rounded-xl border border-green-200 p-4 focus:ring-2 focus:ring-green-400 focus:outline-none"
+              placeholder="Your Message (Optional)"
+              className="w-full rounded-xl border border-green-200 p-4 focus:ring-2 focus:ring-green-500 focus:outline-none transition-all duration-300"
             ></textarea>
           </div>
 
           <button
             type="submit"
-            className="w-full bg-green-600 text-white py-4 rounded-xl font-semibold hover:bg-green-700 transition duration-300 shadow-md"
+            disabled={loading}
+            className={`w-full flex justify-center items-center gap-2 bg-green-600 text-white py-4 rounded-xl font-semibold transition duration-300 shadow-md hover:bg-green-700 ${
+              loading ? "opacity-70 cursor-not-allowed" : ""
+            }`}
           >
-            Send Message
+            {loading ? (
+              <span className="animate-spin rounded-full h-5 w-5 border-t-2 border-white"></span>
+            ) : (
+              "Send Message"
+            )}
           </button>
+
+          {/* Status message */}
+          {status && (
+            <p
+              className={`mt-4 text-center font-medium ${
+                status.includes("✅") ? "text-green-600" : "text-red-600"
+              }`}
+            >
+              {status}
+            </p>
+          )}
         </form>
       </div>
     </section>

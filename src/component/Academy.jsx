@@ -42,7 +42,7 @@ const courses = [
 
 export default function AcademySection() {
   const handleRedirect = () => {
-    const section = document.getElementById("#programs");
+    const section = document.getElementById("contact"); // 👈 target Contact section
     if (section) {
       section.scrollIntoView({ behavior: "smooth" });
     }

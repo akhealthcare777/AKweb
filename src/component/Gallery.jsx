@@ -24,7 +24,7 @@ const ServicesAndGallery = () => {
       icon: <span className="text-3xl">💫</span>,
     },
     {
-      title: "Dron Therapy",
+      title: "Dorn Therapy",
       desc: "Joint adjustments to improve posture and restore body alignment.",
       icon: <span className="text-3xl">§</span>,
     },
@@ -62,7 +62,7 @@ const ServicesAndGallery = () => {
       desc: "Deep cleansing treatments that flush out toxins and rejuvenate your body and mind.",
     },
     {
-      title: "Dron Therapy",
+      title: "Dorn Therapy",
       img: stressRelief,
       desc: "Deep cleansing treatments that flush out toxins and rejuvenate your body and mind.",
     },

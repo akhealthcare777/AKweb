@@ -1,20 +1,28 @@
 import React from "react";
 import { FiPhone } from "react-icons/fi"; // Using react-icons for phone icon
 
-const CallNowSection = () => {
+const CallNowFloatingButton = () => {
   return (
-    <section className="bg-green-600 py-10 sm:py-12 flex justify-center items-center">
-      <a
-        href="tel:+919943069678"
-        className="flex items-center gap-2 sm:gap-3 bg-white text-green-600 font-bold 
-                   px-4 sm:px-6 py-3 sm:py-4 rounded-full shadow-lg hover:shadow-xl 
-                   transition transform hover:scale-105"
-      >
-        <FiPhone className="text-xl sm:text-2xl md:text-3xl" />
-        <span className="text-lg sm:text-xl md:text-2xl">Call Us Now</span>
-      </a>
-    </section>
+    <a
+      href="tel:+919943069678"
+      className="
+        fixed 
+        bottom-20 right-4 sm:bottom-24 sm:right-6 md:bottom-28 md:right-8
+        bg-blue-600 hover:bg-blue-700 
+        text-white 
+        rounded-full 
+        p-4 sm:p-5 md:p-6 
+        shadow-lg 
+        z-50 
+        flex items-center justify-center 
+        transition duration-300 
+        animate-bounce
+      "
+      title="Call Us Now"
+    >
+      <FiPhone className="w-7 h-7 sm:w-8 sm:h-8 md:w-9 md:h-9" />
+    </a>
   );
 };
 
-export default CallNowSection;
+export default CallNowFloatingButton;
