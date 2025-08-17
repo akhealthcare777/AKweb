@@ -9,15 +9,19 @@ const Portfolio = () => {
   return (
     <div className="font-sans scroll-smooth">
       {/* Navigation */}
-      <nav className="bg-white text-black w-full z-50 shadow-md font-sans fixed top-0">
-        <div className="w-full flex justify-between items-center px-4 sm:px-8 lg:px-16 py-4 sm:py-6">
+      <nav className="bg-white text-black w-full z-50 shadow-md font-sans fixed top-0 left-0 right-0">
+        <div className="w-full flex justify-between items-center pl-4 sm:px-8 lg:px-16 py-4 sm:py-6">
           {/* Logo and Title */}
           <a
             href="#home"
             className="flex items-center gap-3 sm:gap-4 text-xl sm:text-2xl font-bold tracking-tight"
             onClick={closeMobileMenu}
           >
-            <img src={logo} alt="Logo" className="h-16 sm:h-20 lg:h-28 w-auto object-contain" />
+            <img
+              src={logo}
+              alt="Logo"
+              className="h-16 sm:h-20 lg:h-28 w-auto object-contain"
+            />
             <span className="max-w-[180px] sm:max-w-none leading-tight">
               AgasthiyasKathir Health Care Centre
             </span>
@@ -25,11 +29,18 @@ const Portfolio = () => {
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-6 lg:gap-10 text-base lg:text-lg font-medium ml-auto">
-            <a href="#about" className="hover:text-gray-600 transition">About</a>
-            <a href="#services" className="hover:text-gray-600 transition">Services</a>
-            <a href="#Programs" className="hover:text-gray-600 transition">Programs</a>
-            <a href="#treatments" className="hover:text-gray-600 transition">Treatments</a> 
-           
+            <a href="#about" className="hover:text-gray-600 transition">
+              About
+            </a>
+            <a href="#services" className="hover:text-gray-600 transition">
+              Services
+            </a>
+            <a href="#Programs" className="hover:text-gray-600 transition">
+              Programs
+            </a>
+            <a href="#treatments" className="hover:text-gray-600 transition">
+              Treatments
+            </a>
 
             <a
               href="#contact"
@@ -62,11 +73,35 @@ const Portfolio = () => {
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
           <div className="md:hidden bg-[#1A1A1A] text-white flex flex-col space-y-6 px-6 py-6 font-medium border-t border-gray-700 text-lg">
-            <a href="#about" onClick={closeMobileMenu} className="hover:text-gray-300">About</a>
-            <a href="#services" onClick={closeMobileMenu} className="hover:text-gray-300">Services</a>
-            <a href="#Programs" onClick={closeMobileMenu} className="hover:text-gray-300">Programs</a>
-            <a href="#treatments" onClick={closeMobileMenu} className="hover:text-gray-300">Treatments</a>
-           
+            <a
+              href="#about"
+              onClick={closeMobileMenu}
+              className="hover:text-gray-300"
+            >
+              About
+            </a>
+            <a
+              href="#services"
+              onClick={closeMobileMenu}
+              className="hover:text-gray-300"
+            >
+              Services
+            </a>
+            <a
+              href="#Programs"
+              onClick={closeMobileMenu}
+              className="hover:text-gray-300"
+            >
+              Programs
+            </a>
+            <a
+              href="#treatments"
+              onClick={closeMobileMenu}
+              className="hover:text-gray-300"
+            >
+              Treatments
+            </a>
+
             <a
               href="#contact"
               onClick={closeMobileMenu}
@@ -88,7 +123,7 @@ const Portfolio = () => {
             src="https://images.pexels.com/photos/4353249/pexels-photo-4353249.jpeg"
             alt="Health background"
             className="w-full h-full object-cover mix-blend-multiply opacity-20"
-          /> 
+          />
         </div>
 
         <div className="relative z-10 container mx-auto text-center">
@@ -100,7 +135,8 @@ const Portfolio = () => {
           </h1>
 
           <p className="text-lg sm:text-xl md:text-2xl text-gray-700 mb-8 sm:mb-12 max-w-3xl mx-auto">
-            Discover holistic treatments rooted in ancient wisdom – Varma, Acupuncture, Chiropractic, and more.
+            Discover holistic treatments rooted in ancient wisdom – Varma,
+            Acupuncture, Chiropractic, and more.
           </p>
 
           <div className="flex flex-wrap justify-center gap-4 sm:gap-6 lg:gap-8">

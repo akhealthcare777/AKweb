@@ -4,48 +4,57 @@ const Review = () => {
   return (
     <>
       {/* Customer Reviews Section */}
-      <section className="bg-white py-16 px-6">
+      <section className="bg-white py-12 sm:py-16 px-4 sm:px-6 lg:px-12">
         {/* Section Title */}
-        <div className="text-center mb-14">
-          <h2 className="text-4xl font-bold text-green-800 mb-2">
+        <div className="text-center mb-10 sm:mb-14">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-green-800 mb-2 leading-snug">
             எங்கள் வாடிக்கையாளர்கள் கூறுவது / What Our Clients Say
           </h2>
-          <p className="text-gray-500 text-sm">Real experiences from our happy patients</p>
+          <p className="text-gray-500 text-xs sm:text-sm">
+            Real experiences from our happy patients
+          </p>
         </div>
 
         <div className="max-w-5xl mx-auto">
           {/* Header */}
-          <div className="mb-12">
-            <h2 className="text-2xl font-semibold text-gray-800 mb-2">
+          <div className="mb-8 sm:mb-12">
+            <h2 className="text-lg sm:text-2xl font-semibold text-gray-800 mb-2">
               Customer Reviews & Ratings
             </h2>
-            <div className="flex items-center gap-2 text-xl font-bold text-yellow-500">
+            <div className="flex items-center gap-2 text-base sm:text-xl font-bold text-yellow-500">
               ★★★★☆
-              <span className="text-gray-600 text-sm font-normal">(4.7 out of 5)</span>
+              <span className="text-gray-600 text-xs sm:text-sm font-normal">
+                (4.7 out of 5)
+              </span>
             </div>
-            <p className="text-sm text-gray-500 mb-6">
+            <p className="text-xs sm:text-sm text-gray-500 mb-4 sm:mb-6">
               Based on 2,418 reviews
             </p>
 
             {/* Star rating bars */}
             <div className="space-y-2">
               {[5, 4, 3, 2, 1].map((star, i) => (
-                <div key={i} className="flex items-center gap-2 text-sm text-gray-700">
-                  <span className="w-12">{star} ★</span>
+                <div
+                  key={i}
+                  className="flex items-center gap-2 text-xs sm:text-sm text-gray-700"
+                >
+                  <span className="w-10 sm:w-12">{star} ★</span>
                   <div className="flex-1 h-2 bg-gray-200 rounded">
                     <div
                       className="h-2 bg-yellow-400 rounded"
                       style={{ width: `${[85, 25, 10, 5, 2][i]}%` }}
                     ></div>
                   </div>
-                  <span className="w-12 text-right">{[230, 220, 5, 2, 3][i]}</span>
+                  <span className="w-8 sm:w-12 text-right">
+                    {[230, 220, 5, 2, 3][i]}
+                  </span>
                 </div>
               ))}
             </div>
           </div>
 
           {/* Review List */}
-          <div className="space-y-10">
+          <div className="space-y-8 sm:space-y-10">
             {[
               {
                 name: "அருண் குமார்",
@@ -83,20 +92,24 @@ const Review = () => {
                 text: "சிகிச்சை முறைகள் சுத்தமாகவும் தொழில்நுட்ப ரீதியாகவும் இருந்தது. இன்னும் சில அமர்வுகள் எடுக்க விரும்புகிறேன்.",
               },
             ].map((review, i) => (
-              <div key={i} className="border-b pb-6">
-                <div className="flex items-center gap-3 mb-2">
-                  <div className="text-sm font-medium text-gray-800">{review.name}</div>
+              <div key={i} className="border-b pb-4 sm:pb-6">
+                <div className="flex flex-wrap items-center gap-2 sm:gap-3 mb-2">
+                  <div className="text-sm sm:text-base font-medium text-gray-800">
+                    {review.name}
+                  </div>
                   <div className="text-xs text-gray-500">{review.date}</div>
                   {review.verified && (
-                    <span className="ml-2 inline-flex items-center px-2 py-0.5 text-xs font-medium bg-green-100 text-green-800 rounded">
+                    <span className="ml-1 sm:ml-2 inline-flex items-center px-2 py-0.5 text-xs font-medium bg-green-100 text-green-800 rounded">
                       ✔ Verified
                     </span>
                   )}
                 </div>
-                <div className="text-yellow-400 mb-2">
+                <div className="text-yellow-400 mb-2 text-sm sm:text-base">
                   {"★".repeat(review.stars)}{"☆".repeat(5 - review.stars)}
                 </div>
-                <p className="text-gray-700 text-sm leading-relaxed">{review.text}</p>
+                <p className="text-gray-700 text-xs sm:text-sm md:text-base leading-relaxed">
+                  {review.text}
+                </p>
               </div>
             ))}
           </div>
