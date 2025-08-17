@@ -47,9 +47,27 @@ const Footer = () => {
         <div>
           <h4 className="text-green-800 font-bold text-xl sm:text-2xl mb-4 sm:mb-6">Connect with Us</h4>
           <div className="flex gap-4 sm:gap-6 text-3xl sm:text-4xl text-green-700">
-            <a href="#"><FaFacebook className="hover:text-green-900 transition" /></a>
-            <a href="#"><FaInstagram className="hover:text-pink-600 transition" /></a>
-            <a href="#"><FaWhatsapp className="hover:text-green-600 transition" /></a>
+            {/* <a
+              href="https://www.facebook.com/YourPageName"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FaFacebook className="hover:text-green-900 transition" />
+            </a> */}
+            <a
+              href="https://www.instagram.com/agasthiyas_kathir_health_care/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FaInstagram className="hover:text-pink-600 transition" />
+            </a>
+            <a
+              href="https://wa.me/919943069678"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FaWhatsapp className="hover:text-green-600 transition" />
+            </a>
           </div>
         </div>
       </div>

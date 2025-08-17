@@ -1,5 +1,6 @@
 import React from "react";
 
+// Academy Courses Data
 const courses = [
   { 
     title: "Diploma in Acupuncture", 
@@ -40,10 +41,17 @@ const courses = [
 ];
 
 export default function AcademySection() {
+  const handleRedirect = () => {
+    const section = document.getElementById("#programs");
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
-    <section className="relative py-20 bg-gradient-to-b from-white to-green-50 overflow-hidden">
+    <section id="Programs" className="relative py-20 bg-gradient-to-b from-white to-green-50 overflow-hidden">
       
-      {/* Decorative SVG Background Shapes */}
+      {/* Background Decoration */}
       <div className="absolute top-0 left-0 w-full h-full pointer-events-none">
         <svg
           className="absolute top-0 left-0 w-full h-full opacity-10"
@@ -57,10 +65,12 @@ export default function AcademySection() {
         </svg>
       </div>
 
+      {/* Content */}
       <div className="max-w-7xl mx-auto px-6 lg:px-12 text-center relative z-10">
         <h2 className="text-4xl md:text-5xl font-bold text-green-800 mb-14">
           Our Academy Programs
         </h2>
+
         <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
           {courses.map((course, index) => (
             <div
@@ -80,7 +90,10 @@ export default function AcademySection() {
                 <p className="mt-5 text-gray-600 leading-relaxed text-sm">
                   {course.desc}
                 </p>
-                <button className="mt-8 w-full py-3 bg-green-600 text-white rounded-lg font-medium hover:bg-green-700 transition">
+                <button 
+                  onClick={handleRedirect}
+                  className="mt-8 w-full py-3 bg-green-600 text-white rounded-lg font-medium hover:bg-green-700 transition"
+                >
                   Enroll Now
                 </button>
               </div>

@@ -5,6 +5,7 @@ import therapy1 from "../assets/therapy1.jpg";
 import therapy2 from "../assets/therapy2.jpg";
 import therapy3 from "../assets/therapy3.jpg";
 import therapy4 from "../assets/therapy4.jpg";
+import Best from "../assets/beststudent.webp";
 
 const AboutAndServices = () => {
   const elements = [
@@ -71,6 +72,11 @@ const AboutAndServices = () => {
             <img
               src={therapy4}
               alt="Therapy 4"
+              className="rounded-3xl object-cover h-100 w-full shadow-lg hover:scale-105 transition duration-300 mt-10"
+            />
+             <img
+              src={Best}
+              alt="best student"
               className="rounded-3xl object-cover h-100 w-full shadow-lg hover:scale-105 transition duration-300 mt-10"
             />
           </div>

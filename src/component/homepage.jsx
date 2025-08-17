@@ -88,7 +88,7 @@ const Portfolio = () => {
             src="https://images.pexels.com/photos/4353249/pexels-photo-4353249.jpeg"
             alt="Health background"
             className="w-full h-full object-cover mix-blend-multiply opacity-20"
-          />
+          /> 
         </div>
 
         <div className="relative z-10 container mx-auto text-center">

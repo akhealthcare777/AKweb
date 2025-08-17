@@ -1,10 +1,10 @@
 import React from "react";
 import backAcupuncture from "../assets/backAcupuncture.jpg";
-import facialAcupuncture from "../assets/facialAcupuncture.jpg";
-import neckVarma from "../assets/neckVarma.jpg";
-import handAcupuncture from "../assets/handAcupuncture.jpg";
-import traditionalVarma from "../assets/traditionalVarma.jpg";
-import stressRelief from "../assets/stressRelief.jpg";
+import facialAcupuncture from "../assets/facialAcupuncture.webp";
+import neckVarma from "../assets/neckVarma.webp";
+import handAcupuncture from "../assets/handAcupuncture.webp";
+import traditionalVarma from "../assets/traditionalVarma.webp";
+import stressRelief from "../assets/stressRelief.webp";
 
 const ServicesAndGallery = () => {
   const services = [
@@ -19,45 +19,54 @@ const ServicesAndGallery = () => {
       icon: <span className="text-3xl">🧬</span>,
     },
     {
-      title: "Nadi Sugam (Chiropractic)",
+      title: "Chiropractic",
       desc: "Spinal and joint adjustments to improve posture and restore body alignment.",
       icon: <span className="text-3xl">💫</span>,
+    },
+    {
+      title: "Dron Therapy",
+      desc: "Joint adjustments to improve posture and restore body alignment.",
+      icon: <span className="text-3xl">§</span>,
     },
   ];
 
   const treatmentsGallery = [
-  {
-    title: "Acupuncture",
-    img: backAcupuncture,
-    desc: "Precise needle therapy to relieve pain, balance energy, and treat chronic conditions naturally.",
-  },
-  {
-    title: "Varmam",
-    img: traditionalVarma,
-    desc: "Ancient Siddha-based energy point therapy to stimulate healing and restore vital balance.",
-  },
-  {
-    title: "Chiropractic",
-    img: neckVarma,
-    desc: "Spinal and joint manipulation to improve mobility, relieve back pain, and align posture.",
-  },
-  {
-    title: "Panchakarma",
-    img: handAcupuncture,
-    desc: "Ayurvedic detox and rejuvenation process that cleanses the body through five powerful actions.",
-  },
-  {
-    title: "Cupping",
-    img: facialAcupuncture,
-    desc: "Suction-based therapy to increase blood flow, relieve muscle knots, and promote natural healing.",
-  },
-  {
-    title: "Detoxing",
-    img: stressRelief,
-    desc: "Deep cleansing treatments that flush out toxins and rejuvenate your body and mind.",
-  },
-];
-
+    {
+      title: "Acupuncture",
+      img: backAcupuncture,
+      desc: "Precise needle therapy to relieve pain, balance energy, and treat chronic conditions naturally.",
+    },
+    {
+      title: "Varmam",
+      img: traditionalVarma,
+      desc: "Ancient Siddha-based energy point therapy to stimulate healing and restore vital balance.",
+    },
+    {
+      title: "Chiropractic",
+      img: neckVarma,
+      desc: "Spinal and joint manipulation to improve mobility, relieve back pain, and align posture.",
+    },
+    {
+      title: "Panchakarma",
+      img: handAcupuncture,
+      desc: "Ayurvedic detox and rejuvenation process that cleanses the body through five powerful actions.",
+    },
+    {
+      title: "Cupping",
+      img: facialAcupuncture,
+      desc: "Suction-based therapy to increase blood flow, relieve muscle knots, and promote natural healing.",
+    },
+    {
+      title: "Detoxing",
+      img: stressRelief,
+      desc: "Deep cleansing treatments that flush out toxins and rejuvenate your body and mind.",
+    },
+    {
+      title: "Dron Therapy",
+      img: stressRelief,
+      desc: "Deep cleansing treatments that flush out toxins and rejuvenate your body and mind.",
+    },
+  ];
 
   const BackgroundSVG = () => (
     <svg
@@ -83,10 +92,13 @@ const ServicesAndGallery = () => {
   return (
     <>
       {/* Services */}
-      <section className="relative py-20 bg-slate-50 w-full overflow-hidden">
+      <section id="treatments" className="relative py-20 bg-slate-50 w-full overflow-hidden">
+
         <BackgroundSVG />
         <div className="relative w-full px-6">
-          <h2 className="text-4xl font-bold text-center mb-12 text-gray-900">Our Special Treatments</h2>
+          <h2 className="text-4xl font-bold text-center mb-12 text-gray-900">
+            Our Special Treatments
+          </h2>
           <div className="w-full flex flex-wrap justify-center gap-8">
             {services.map((service, idx) => (
               <div
@@ -94,7 +106,9 @@ const ServicesAndGallery = () => {
                 className="w-full sm:w-[300px] bg-white p-6 rounded-xl shadow hover:shadow-lg text-center transition"
               >
                 <div className="mb-4">{service.icon}</div>
-                <h3 className="text-xl font-semibold text-gray-800 mb-2">{service.title}</h3>
+                <h3 className="text-xl font-semibold text-gray-800 mb-2">
+                  {service.title}
+                </h3>
                 <p className="text-gray-600 text-sm">{service.desc}</p>
               </div>
             ))}
@@ -106,16 +120,26 @@ const ServicesAndGallery = () => {
       <section className="relative py-20 bg-white w-full overflow-hidden">
         <BackgroundSVG />
         <div className="relative w-full px-6">
-          <h2 className="text-4xl font-bold text-center mb-12 text-gray-900">Treatments Gallery</h2>
+          <h2 className="text-4xl font-bold text-center mb-12 text-gray-900">
+            Treatments Gallery
+          </h2>
           <div className="w-full flex flex-wrap justify-center gap-8">
             {treatmentsGallery.map(({ title, desc, img }) => (
               <div
                 key={title}
                 className="w-full sm:w-[300px] bg-gray-50 rounded-xl overflow-hidden shadow hover:shadow-xl transition"
               >
-                <img src={img} alt={title} className="w-full h-60 object-cover" />
+                <div className="w-full h-60 flex items-center justify-center bg-white">
+                  <img
+                    src={img}
+                    alt={title}
+                    className="max-h-full max-w-full object-contain"
+                  />
+                </div>
                 <div className="p-5">
-                  <h3 className="text-lg font-semibold mb-1 text-gray-800">{title}</h3>
+                  <h3 className="text-lg font-semibold mb-1 text-gray-800">
+                    {title}
+                  </h3>
                   <p className="text-gray-600 text-sm">{desc}</p>
                 </div>
               </div>
@@ -130,7 +154,10 @@ const ServicesAndGallery = () => {
         <div className="relative w-full px-6">
           <ul className="flex flex-row justify-center items-center gap-4">
             {[1, 2, 3].map((step) => (
-              <li key={step} className="flex items-center gap-2 group transition hover:scale-105">
+              <li
+                key={step}
+                className="flex items-center gap-2 group transition hover:scale-105"
+              >
                 <span className="w-8 h-8 flex items-center justify-center bg-green-600 text-white font-bold rounded-full">
                   {step}
                 </span>
