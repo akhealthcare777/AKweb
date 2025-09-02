@@ -23,7 +23,7 @@ const AboutAndServices = () => {
         id="about"
         className="bg-gradient-to-br from-green-50 via-white to-green-100 py-16 sm:py-24 px-4 sm:px-6 md:px-12"
       >
-        <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+        <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
           {/* Left Text Content */}
           <div>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-green-900 leading-snug mb-6">
@@ -53,31 +53,31 @@ const AboutAndServices = () => {
           </div>
 
           {/* Right Image Grid */}
-          <div className="grid grid-cols-2 gap-3 sm:gap-4">
+          <div className="grid grid-cols-2 gap-2 sm:gap-4">
             <img
               src={therapy1}
               alt="Therapy 1"
-              className="rounded-2xl sm:rounded-3xl object-cover h-40 sm:h-52 md:h-64 lg:h-72 w-full shadow-lg hover:scale-105 transition duration-300"
+              className="rounded-2xl sm:rounded-3xl object-cover w-full max-w-full aspect-square shadow-lg hover:scale-105 transition duration-300"
             />
             <img
               src={therapy2}
               alt="Therapy 2"
-              className="rounded-2xl sm:rounded-3xl object-cover h-40 sm:h-52 md:h-64 lg:h-72 w-full shadow-lg hover:scale-105 transition duration-300 mt-4 sm:mt-6"
+              className="rounded-2xl sm:rounded-3xl object-cover w-full max-w-full aspect-square shadow-lg hover:scale-105 transition duration-300 mt-2 sm:mt-4"
             />
             <img
               src={therapy3}
               alt="Therapy 3"
-              className="rounded-2xl sm:rounded-3xl object-cover h-40 sm:h-52 md:h-64 lg:h-72 w-full shadow-lg hover:scale-105 transition duration-300"
+              className="rounded-2xl sm:rounded-3xl object-cover w-full max-w-full aspect-square shadow-lg hover:scale-105 transition duration-300"
             />
             <img
               src={therapy4}
               alt="Therapy 4"
-              className="rounded-2xl sm:rounded-3xl object-cover h-40 sm:h-52 md:h-64 lg:h-72 w-full shadow-lg hover:scale-105 transition duration-300 mt-4 sm:mt-6"
+              className="rounded-2xl sm:rounded-3xl object-cover w-full max-w-full aspect-square shadow-lg hover:scale-105 transition duration-300 mt-2 sm:mt-4"
             />
             <img
               src={Best}
-              alt="best student"
-              className="rounded-2xl sm:rounded-3xl object-cover h-40 sm:h-52 md:h-64 lg:h-72 w-full shadow-lg hover:scale-105 transition duration-300 mt-4 sm:mt-6 col-span-2"
+              alt="Best Student"
+              className="rounded-2xl sm:rounded-3xl object-cover w-full max-w-full aspect-video shadow-lg hover:scale-105 transition duration-300 mt-2 sm:mt-4 col-span-2"
             />
           </div>
         </div>
@@ -87,7 +87,7 @@ const AboutAndServices = () => {
           <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-center text-green-800 mb-8 sm:mb-12">
             The Five Elements of Nature
           </h3>
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-6 sm:gap-8 text-center">
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4 sm:gap-6 lg:gap-8 text-center">
             {elements.map((el) => (
               <div
                 key={el.name}
