@@ -1,4 +1,6 @@
 import React from "react";
+import { Helmet } from "react-helmet"; // ✅ SEO Head Manager
+import { Wind, Droplets, Globe, Flame, Sparkles } from "lucide-react"; // ✅ Icons
 
 // Import images from assets folder
 import therapy1 from "../assets/therapy1.jpg";
@@ -9,15 +11,28 @@ import Best from "../assets/beststudent.webp";
 
 const AboutAndServices = () => {
   const elements = [
-    { name: "Air", icon: "💨" },
-    { name: "Water", icon: "💧" },
-    { name: "Earth", icon: "🌍" },
-    { name: "Fire", icon: "🔥" },
-    { name: "Space", icon: "✨" },
+    { name: "Air", icon: <Wind className="w-10 h-10 text-green-600" /> },
+    { name: "Water", icon: <Droplets className="w-10 h-10 text-green-600" /> },
+    { name: "Earth", icon: <Globe className="w-10 h-10 text-green-600" /> },
+    { name: "Fire", icon: <Flame className="w-10 h-10 text-green-600" /> },
+    { name: "Space", icon: <Sparkles className="w-10 h-10 text-green-600" /> },
   ];
 
   return (
     <>
+      {/* ✅ SEO Metadata */}
+      <Helmet>
+        <title>About Us | Agasthiyas Kathir Health Care Centre</title>
+        <meta
+          name="description"
+          content="Discover holistic healing at Agasthiyas Kathir Health Care Centre. Specializing in Acupuncture, Varma, Reflexology, and Cupping Therapy with drug-free, natural treatments."
+        />
+        <meta
+          name="keywords"
+          content="Acupuncture, Varma Therapy, Reflexology, Cupping Therapy, Natural Healing, Siddha Medicine, Holistic Health, Traditional Therapy, Drug-Free Healing, Agasthiyas Kathir"
+        />
+      </Helmet>
+
       {/* About Us Section */}
       <section
         id="about"
@@ -56,28 +71,28 @@ const AboutAndServices = () => {
           <div className="grid grid-cols-2 gap-2 sm:gap-4">
             <img
               src={therapy1}
-              alt="Therapy 1"
-              className="rounded-2xl sm:rounded-3xl object-cover w-full max-w-full aspect-square shadow-lg hover:scale-105 transition duration-300"
+              alt="Acupuncture therapy session"
+              className="rounded-2xl sm:rounded-3xl object-cover w-full aspect-square shadow-lg hover:scale-105 transition duration-300"
             />
             <img
               src={therapy2}
-              alt="Therapy 2"
-              className="rounded-2xl sm:rounded-3xl object-cover w-full max-w-full aspect-square shadow-lg hover:scale-105 transition duration-300 mt-2 sm:mt-4"
+              alt="Varma therapy"
+              className="rounded-2xl sm:rounded-3xl object-cover w-full aspect-square shadow-lg hover:scale-105 transition duration-300 mt-2 sm:mt-4"
             />
             <img
               src={therapy3}
-              alt="Therapy 3"
-              className="rounded-2xl sm:rounded-3xl object-cover w-full max-w-full aspect-square shadow-lg hover:scale-105 transition duration-300"
+              alt="Reflexology treatment"
+              className="rounded-2xl sm:rounded-3xl object-cover w-full aspect-square shadow-lg hover:scale-105 transition duration-300"
             />
             <img
               src={therapy4}
-              alt="Therapy 4"
-              className="rounded-2xl sm:rounded-3xl object-cover w-full max-w-full aspect-square shadow-lg hover:scale-105 transition duration-300 mt-2 sm:mt-4"
+              alt="Cupping therapy"
+              className="rounded-2xl sm:rounded-3xl object-cover w-full aspect-square shadow-lg hover:scale-105 transition duration-300 mt-2 sm:mt-4"
             />
             <img
               src={Best}
-              alt="Best Student"
-              className="rounded-2xl sm:rounded-3xl object-cover w-full max-w-full aspect-video shadow-lg hover:scale-105 transition duration-300 mt-2 sm:mt-4 col-span-2"
+              alt="Awarded best student in healthcare"
+              className="rounded-2xl sm:rounded-3xl object-cover w-full aspect-video shadow-lg hover:scale-105 transition duration-300 mt-2 sm:mt-4 col-span-2"
             />
           </div>
         </div>
@@ -93,7 +108,7 @@ const AboutAndServices = () => {
                 key={el.name}
                 className="transition transform hover:scale-110 bg-white border border-green-100 p-6 sm:p-8 rounded-xl sm:rounded-2xl shadow-md hover:shadow-xl cursor-pointer"
               >
-                <div className="text-3xl sm:text-4xl mb-3 sm:mb-4">{el.icon}</div>
+                <div className="flex justify-center mb-3 sm:mb-4">{el.icon}</div>
                 <h4 className="text-lg sm:text-xl font-semibold text-green-900">{el.name}</h4>
                 <p className="text-gray-600 text-xs sm:text-sm">Element of Nature</p>
               </div>

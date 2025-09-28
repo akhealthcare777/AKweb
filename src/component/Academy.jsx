@@ -1,4 +1,5 @@
 import React from "react";
+import { Helmet } from "react-helmet";
 
 // Academy Courses Data
 const courses = [
@@ -49,58 +50,75 @@ export default function AcademySection() {
   };
 
   return (
-    <section id="Programs" className="relative py-20 bg-gradient-to-b from-white to-green-50 overflow-hidden">
-      
-      {/* Background Decoration */}
-      <div className="absolute top-0 left-0 w-full h-full pointer-events-none">
-        <svg
-          className="absolute top-0 left-0 w-full h-full opacity-10"
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 1440 320"
-        >
-          <path
-            fill="#22c55e"
-            d="M0,64L48,85.3C96,107,192,149,288,154.7C384,160,480,128,576,138.7C672,149,768,203,864,213.3C960,224,1056,192,1152,176C1248,160,1344,160,1392,160L1440,160L1440,320L0,320Z"
-          ></path>
-        </svg>
-      </div>
+    <>
+      {/* ✅ SEO Helmet */}
+      <Helmet>
+        <title>Academy Programs | Acupuncture, Varmam, Cupping & Reflexology Training in Coimbatore</title>
+        <meta 
+          name="description" 
+          content="Join Agasthiyas Kathir Health Care Academy in Coimbatore for Diploma, Master Diploma, and MD in Acupuncture, Cupping Therapy, Reflexology, and Varmam courses. Learn holistic healing with certification." 
+        />
+        <meta 
+          name="keywords" 
+          content="Acupuncture Academy Coimbatore, Best Acupuncture Courses, Diploma in Acupuncture, Master Diploma Acupuncture, MD Acupuncture Training, Cupping Therapy Course, Foot Reflexology Training, Varmam Course Coimbatore, Panchakarma Academy, Natural Healing Programs, Holistic Health Courses, Alternative Medicine Training, Top Acupuncture College, Yoga and Meditation Classes, Wellness Education Center, Certificate Courses in Acupuncture, Traditional Medicine Courses, Naturopathy and Healing Programs, Chiropractic Training Academy, Pain Relief Therapy Training"
+        />
+        <meta name="author" content="Agasthiyas Kathir Health Care Centre" />
+      </Helmet>
 
-      {/* Content */}
-      <div className="max-w-7xl mx-auto px-6 lg:px-12 text-center relative z-10">
-        <h2 className="text-4xl md:text-5xl font-bold text-green-800 mb-14">
-          Our Academy Programs
-        </h2>
-
-        <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
-          {courses.map((course, index) => (
-            <div
-              key={index}
-              className="group bg-white shadow-lg rounded-2xl overflow-hidden border border-green-200 hover:shadow-2xl hover:scale-105 transform transition duration-300"
-            >
-              <img
-                src={course.img}
-                alt={course.title}
-                className="h-56 w-full object-cover group-hover:scale-110 transition duration-500"
-              />
-              <div className="p-8 text-left">
-                <h3 className="text-2xl font-semibold text-gray-900 group-hover:text-green-700">
-                  {course.title}
-                </h3>
-                <p className="mt-3 text-green-600 font-medium">{course.duration}</p>
-                <p className="mt-5 text-gray-600 leading-relaxed text-sm">
-                  {course.desc}
-                </p>
-                <button 
-                  onClick={handleRedirect}
-                  className="mt-8 w-full py-3 bg-green-600 text-white rounded-lg font-medium hover:bg-green-700 transition"
-                >
-                  Enroll Now
-                </button>
-              </div>
-            </div>
-          ))}
+      {/* ✅ Section UI */}
+      <section id="Programs" className="relative py-20 bg-gradient-to-b from-green-50 via-white to-green-50 overflow-hidden">
+        
+        {/* Background Decoration */}
+        <div className="absolute top-0 left-0 w-full h-full pointer-events-none">
+          <svg
+            className="absolute top-0 left-0 w-full h-full opacity-10"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 1440 320"
+          >
+            <path
+              fill="#22c55e"
+              d="M0,64L48,85.3C96,107,192,149,288,154.7C384,160,480,128,576,138.7C672,149,768,203,864,213.3C960,224,1056,192,1152,176C1248,160,1344,160,1392,160L1440,160L1440,320L0,320Z"
+            ></path>
+          </svg>
         </div>
-      </div>
-    </section>
+
+        {/* Content */}
+        <div className="max-w-7xl mx-auto px-6 lg:px-12 text-center relative z-10">
+          <h2 className="text-4xl md:text-5xl font-bold text-green-800 mb-14">
+            Our Academy Programs
+          </h2>
+
+          <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
+            {courses.map((course, index) => (
+              <div
+                key={index}
+                className="group bg-white shadow-lg rounded-2xl overflow-hidden border border-green-200 hover:shadow-2xl hover:scale-105 transform transition duration-300"
+              >
+                <img
+                  src={course.img}
+                  alt={course.title}
+                  className="h-56 w-full object-cover group-hover:scale-110 transition duration-500"
+                />
+                <div className="p-8 text-left">
+                  <h3 className="text-2xl font-semibold text-gray-900 group-hover:text-green-700">
+                    {course.title}
+                  </h3>
+                  <p className="mt-3 text-green-600 font-medium">{course.duration}</p>
+                  <p className="mt-5 text-gray-600 leading-relaxed text-sm">
+                    {course.desc}
+                  </p>
+                  <button 
+                    onClick={handleRedirect}
+                    className="mt-8 w-full py-3 bg-green-600 text-white rounded-lg font-medium hover:bg-green-700 transition"
+                  >
+                    Enroll Now
+                  </button>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+    </>
   );
 }

@@ -1,4 +1,5 @@
 import React from "react";
+import { Helmet } from "react-helmet"; // ✅ Import Helmet
 import {
   FaDumbbell,
   FaLaptop,
@@ -46,6 +47,20 @@ const FitnessClasses = () => {
       id="fitness"
       className="bg-gradient-to-b from-green-50 to-white py-14 sm:py-16 md:py-20 px-4 sm:px-6 lg:px-12"
     >
+      {/* ✅ SEO Meta Tags */}
+      <Helmet>
+        <title>Online & Offline Fitness Classes | Yoga, Meditation, Zumba</title>
+        <meta
+          name="description"
+          content="Join our online and offline fitness classes: meditation, yoga, zumba, nutrition plans, weight loss & gain programs. Affordable all-in-one plan to improve health and wellness."
+        />
+        <meta
+          name="keywords"
+          content="fitness classes, online yoga classes, meditation sessions, zumba workouts, nutrition plans, diet plan, weight loss program, weight gain program, wellness, health, exercise"
+        />
+        <meta name="author" content="Healing Touch Clinic" />
+      </Helmet>
+
       <div className="max-w-7xl mx-auto text-center">
         {/* Heading */}
         <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-green-800 mb-4 sm:mb-6">
@@ -53,8 +68,7 @@ const FitnessClasses = () => {
         </h2>
         <p className="text-gray-600 max-w-3xl mx-auto mb-10 sm:mb-12 md:mb-16 text-base sm:text-lg md:text-xl leading-relaxed px-2">
           Get <span className="font-bold text-green-700">online & offline</span>{" "}
-          fitness programs — meditation, yoga, zumba, nutrition, weight loss &
-          gain — all in{" "}
+          fitness programs — meditation, yoga, zumba, nutrition, weight loss & gain — all in{" "}
           <span className="text-green-800 font-bold">one affordable plan!</span>
         </p>
 
@@ -71,9 +85,7 @@ const FitnessClasses = () => {
               <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 mb-2 sm:mb-3">
                 {item.title}
               </h3>
-              <p className="text-gray-600 text-sm sm:text-base md:text-lg">
-                {item.desc}
-              </p>
+              <p className="text-gray-600 text-sm sm:text-base md:text-lg">{item.desc}</p>
             </div>
           ))}
         </div>
