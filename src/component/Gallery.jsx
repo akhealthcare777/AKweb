@@ -85,6 +85,7 @@ const ServicesAndGallery = () => {
         stroke="url(#lineGradient)"
         strokeWidth="0.4"
         fill="none"
+        opacity="0.2"   // 👈 reduced opacity for lighter background line
       />
     </svg>
   );
@@ -92,8 +93,7 @@ const ServicesAndGallery = () => {
   return (
     <>
       {/* Services */}
-      <section id="treatments" className="relative py-20 bg-slate-50 w-full overflow-hidden">
-
+      <section id="treatments" className="relative py-28 bg-slate-50 w-full overflow-hidden">
         <BackgroundSVG />
         <div className="relative w-full px-6">
           <h2 className="text-4xl font-bold text-center mb-12 text-gray-900">
@@ -117,7 +117,7 @@ const ServicesAndGallery = () => {
       </section>
 
       {/* Treatments Gallery */}
-      <section className="relative py-20 bg-white w-full overflow-hidden">
+      <section className="relative py-28 bg-white w-full overflow-hidden">
         <BackgroundSVG />
         <div className="relative w-full px-6">
           <h2 className="text-4xl font-bold text-center mb-12 text-gray-900">
@@ -149,7 +149,7 @@ const ServicesAndGallery = () => {
       </section>
 
       {/* Stepper */}
-      <section className="relative py-12 bg-slate-50 w-full overflow-hidden">
+      <section className="relative py-20 bg-slate-50 w-full overflow-hidden">
         <BackgroundSVG />
         <div className="relative w-full px-6">
           <ul className="flex flex-row justify-center items-center gap-4">
