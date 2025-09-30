@@ -10,48 +10,12 @@ import {
 
 const FitnessClasses = () => {
   const classes = [
-    {
-      title: "Meditation",
-      desc: "Calm your mind and improve focus with guided meditation sessions.",
-      icon: <FaHeartbeat />,
-      bgColor: "from-green-400 to-green-600",
-      iconBg: "bg-green-600",
-    },
-    {
-      title: "Yoga",
-      desc: "Improve flexibility, strength, and balance through regular practice.",
-      icon: <FaUsers />,
-      bgColor: "from-emerald-400 to-emerald-600",
-      iconBg: "bg-emerald-600",
-    },
-    {
-      title: "Zumba",
-      desc: "Fun and energetic dance workouts to boost your fitness levels.",
-      icon: <FaDumbbell />,
-      bgColor: "from-lime-400 to-lime-600",
-      iconBg: "bg-lime-600",
-    },
-    {
-      title: "Nutrition & Diet Plan",
-      desc: "Personalized diet plans for better health and lifestyle.",
-      icon: <FaAppleAlt />,
-      bgColor: "from-yellow-400 to-yellow-600",
-      iconBg: "bg-yellow-600",
-    },
-    {
-      title: "Weight Loss",
-      desc: "Structured programs to help you achieve your ideal weight.",
-      icon: <FaLaptop />,
-      bgColor: "from-teal-400 to-teal-600",
-      iconBg: "bg-teal-600",
-    },
-    {
-      title: "Weight Gain",
-      desc: "Healthy strategies to build muscle and increase weight safely.",
-      icon: <FaDumbbell />,
-      bgColor: "from-cyan-400 to-cyan-600",
-      iconBg: "bg-cyan-600",
-    },
+    { title: "Meditation", desc: "Calm your mind and improve focus with guided meditation sessions.", icon: <FaHeartbeat />, bgColor: "from-green-400 to-green-600", iconBg: "bg-green-600" },
+    { title: "Yoga", desc: "Improve flexibility, strength, and balance through regular practice.", icon: <FaUsers />, bgColor: "from-emerald-400 to-emerald-600", iconBg: "bg-emerald-600" },
+    { title: "Zumba", desc: "Fun and energetic dance workouts to boost your fitness levels.", icon: <FaDumbbell />, bgColor: "from-lime-400 to-lime-600", iconBg: "bg-lime-600" },
+    { title: "Nutrition & Diet Plan", desc: "Personalized diet plans for better health and lifestyle.", icon: <FaAppleAlt />, bgColor: "from-yellow-400 to-yellow-600", iconBg: "bg-yellow-600" },
+    { title: "Weight Loss", desc: "Structured programs to help you achieve your ideal weight.", icon: <FaLaptop />, bgColor: "from-teal-400 to-teal-600", iconBg: "bg-teal-600" },
+    { title: "Weight Gain", desc: "Healthy strategies to build muscle and increase weight safely.", icon: <FaDumbbell />, bgColor: "from-cyan-400 to-cyan-600", iconBg: "bg-cyan-600" },
   ];
 
   return (
@@ -60,16 +24,29 @@ const FitnessClasses = () => {
       className="bg-gradient-to-b from-green-50 to-white py-16 px-6 sm:px-12 lg:px-20"
     >
       <Helmet>
-        <title>Online & Offline Fitness Classes | Yoga, Meditation, Zumba</title>
+        <title>Fitness Classes in Coimbatore | Yoga, Meditation, Zumba, Diet & Weight Management</title>
         <meta
           name="description"
-          content="Join our online and offline fitness classes: meditation, yoga, zumba, nutrition plans, weight loss & gain programs. Affordable all-in-one plan to improve health and wellness."
+          content="Join our fitness classes in Coimbatore: online & offline Yoga, Meditation, Zumba, Nutrition plans, Weight Loss & Weight Gain programs. Affordable holistic wellness plan for mind and body."
         />
         <meta
           name="keywords"
-          content="fitness classes, online yoga classes, meditation sessions, zumba workouts, nutrition plans, diet plan, weight loss program, weight gain program, wellness, health, exercise"
+          content="Fitness classes Coimbatore, Yoga classes online, Meditation sessions, Zumba workouts, Weight loss program Coimbatore, Weight gain program, Nutrition and diet plan, Holistic health programs, Wellness classes, Online fitness coaching, Personal training, Mind and body wellness, Healthy lifestyle, Exercise programs, Meditation for stress relief, Functional fitness classes, Gym and wellness center"
         />
         <meta name="author" content="Healing Touch Clinic" />
+
+        {/* Open Graph / Facebook */}
+        <meta property="og:title" content="Fitness Classes in Coimbatore | Yoga, Meditation, Zumba, Diet & Weight Management" />
+        <meta property="og:description" content="Enroll in online & offline fitness classes: Yoga, Meditation, Zumba, Nutrition, Weight Loss & Gain programs at Healing Touch Clinic, Coimbatore." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://yourwebsite.com/fitness" />
+        <meta property="og:image" content="https://yourwebsite.com/assets/fitness-banner.webp" />
+
+        {/* Twitter */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Fitness Classes in Coimbatore | Yoga, Meditation, Zumba, Diet & Weight Management" />
+        <meta name="twitter:description" content="Join Healing Touch Clinic for holistic fitness: online & offline Yoga, Meditation, Zumba, Nutrition plans, and Weight programs to improve health and wellness." />
+        <meta name="twitter:image" content="https://yourwebsite.com/assets/fitness-banner.webp" />
       </Helmet>
 
       <div className="max-w-7xl mx-auto text-center">
@@ -80,8 +57,7 @@ const FitnessClasses = () => {
         <p className="text-gray-700 max-w-4xl mx-auto mb-14 text-lg sm:text-xl md:text-2xl leading-relaxed px-4">
           Get{" "}
           <span className="font-extrabold text-green-700">online & offline</span>{" "}
-          fitness programs — meditation, yoga, zumba, nutrition, weight loss &
-          gain — all in{" "}
+          fitness programs — meditation, yoga, zumba, nutrition, weight loss & gain — all in{" "}
           <span className="text-green-900 font-extrabold">
             one affordable plan!
           </span>
@@ -105,7 +81,6 @@ const FitnessClasses = () => {
               <p className="text-white/90 text-base sm:text-lg leading-relaxed drop-shadow-sm">
                 {item.desc}
               </p>
-              {/* Decorative circles */}
               <span className="absolute -top-6 -right-6 w-24 h-24 rounded-full bg-white/20 blur-3xl pointer-events-none"></span>
               <span className="absolute bottom-6 left-6 w-16 h-16 rounded-full bg-white/10 blur-xl pointer-events-none"></span>
             </div>
@@ -138,9 +113,8 @@ const FitnessClasses = () => {
             </span>
           </div>
 
-          {/* Updated Join Now Button → Phone Call */}
           <a
-            href="tel:+91 99430 69678" // replace with your actual phone number
+            href="tel:+919943069678"
             className="block w-full text-center bg-yellow-400 hover:bg-yellow-500 text-black font-extrabold py-4 rounded-full shadow-lg text-lg transition duration-300"
           >
             Join Now

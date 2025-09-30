@@ -56,13 +56,31 @@ export default function AcademySection() {
         <title>Academy Programs | Acupuncture, Varmam, Cupping & Reflexology Training in Coimbatore</title>
         <meta 
           name="description" 
-          content="Join Agasthiyas Kathir Health Care Academy in Coimbatore for Diploma, Master Diploma, and MD in Acupuncture, Cupping Therapy, Reflexology, and Varmam courses. Learn holistic healing with certification." 
+          content="Enroll in Agasthiyas Kathir Health Care Academy in Coimbatore for professional courses in Acupuncture, Varmam, Cupping Therapy, Foot Reflexology, and holistic healing. Diploma, Master Diploma, and MD programs available with hands-on training and certification." 
         />
         <meta 
           name="keywords" 
-          content="Acupuncture Academy Coimbatore, Best Acupuncture Courses, Diploma in Acupuncture, Master Diploma Acupuncture, MD Acupuncture Training, Cupping Therapy Course, Foot Reflexology Training, Varmam Course Coimbatore, Panchakarma Academy, Natural Healing Programs, Holistic Health Courses, Alternative Medicine Training, Top Acupuncture College, Yoga and Meditation Classes, Wellness Education Center, Certificate Courses in Acupuncture, Traditional Medicine Courses, Naturopathy and Healing Programs, Chiropractic Training Academy, Pain Relief Therapy Training"
+          content="Acupuncture Academy Coimbatore, Varmam Therapy Training, Cupping Therapy Course, Reflexology Training, Diploma in Acupuncture, Master Diploma Acupuncture, MD Acupuncture, Holistic Healing Courses, Pain Relief Therapy Training, Alternative Medicine Academy, Natural Healing Programs, Wellness Education Center, Traditional Therapy Training, Certified Acupuncture Courses, Foot Reflexology Certification, Panchakarma Courses, Healing Therapy Academy, Integrative Health Training, Drug-Free Healing Courses"
         />
         <meta name="author" content="Agasthiyas Kathir Health Care Centre" />
+        <meta property="og:title" content="Academy Programs | Acupuncture, Varmam, Cupping & Reflexology Training in Coimbatore" />
+        <meta 
+          property="og:description" 
+          content="Join Agasthiyas Kathir Health Care Academy in Coimbatore to learn Acupuncture, Varmam, Reflexology, and Cupping Therapy. Hands-on training and certification for holistic healing professionals." 
+        />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://yourwebsite.com/programs" />
+        <meta property="og:image" content="https://yourwebsite.com/assets/therapy1.jpg" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta 
+          name="twitter:title" 
+          content="Academy Programs | Acupuncture, Varmam, Cupping & Reflexology Training in Coimbatore" 
+        />
+        <meta 
+          name="twitter:description" 
+          content="Enroll in professional courses at Agasthiyas Kathir Health Care Academy: Acupuncture, Varmam, Cupping Therapy, Reflexology, Diploma, Master Diploma, MD programs, and holistic healing certification." 
+        />
+        <meta name="twitter:image" content="https://yourwebsite.com/assets/therapy1.jpg" />
       </Helmet>
 
       {/* ✅ Section UI */}

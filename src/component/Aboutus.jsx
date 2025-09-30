@@ -25,12 +25,31 @@ const AboutAndServices = () => {
         <title>About Us | Agasthiyas Kathir Health Care Centre</title>
         <meta
           name="description"
-          content="Discover holistic healing at Agasthiyas Kathir Health Care Centre. Specializing in Acupuncture, Varma, Reflexology, and Cupping Therapy with drug-free, natural treatments."
+          content="Learn about Agasthiyas Kathir Health Care Centre — a holistic wellness clinic specializing in Acupuncture, Varma Therapy, Reflexology, Cupping, Panchakarma, and natural, drug-free treatments for pain relief, stress management, and overall well-being."
         />
         <meta
           name="keywords"
-          content="Acupuncture, Varma Therapy, Reflexology, Cupping Therapy, Natural Healing, Siddha Medicine, Holistic Health, Traditional Therapy, Drug-Free Healing, Agasthiyas Kathir"
+          content="About Agasthiyas Kathir, Health Care Centre, Acupuncture, Varma Therapy, Reflexology, Cupping Therapy, Panchakarma, Holistic Healing, Alternative Medicine, Natural Treatments, Integrative Health, Pain Relief, Stress Relief, Wellness Centre, Holistic Therapy, Healing Clinic, Detox Therapy, Mind-Body Wellness, Physical Therapy, Energy Healing, Traditional Therapy, Non-Invasive Treatments"
         />
+        <meta name="author" content="Agasthiyas Kathir Health Care Centre" />
+        <meta property="og:title" content="About Us | Agasthiyas Kathir Health Care Centre" />
+        <meta
+          property="og:description"
+          content="Discover holistic healing at Agasthiyas Kathir Health Care Centre. We specialize in Acupuncture, Varma Therapy, Reflexology, Cupping, Panchakarma, and natural drug-free treatments for total wellness."
+        />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://yourwebsite.com/about" />
+        <meta property="og:image" content="https://yourwebsite.com/assets/therapy1.jpg" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta
+          name="twitter:title"
+          content="About Us | Agasthiyas Kathir Health Care Centre"
+        />
+        <meta
+          name="twitter:description"
+          content="Explore our holistic health services including Acupuncture, Varma Therapy, Reflexology, Cupping, and Panchakarma — natural, drug-free healing for your body and mind."
+        />
+        <meta name="twitter:image" content="https://yourwebsite.com/assets/therapy1.jpg" />
       </Helmet>
 
       {/* About Us Section */}
@@ -50,8 +69,7 @@ const AboutAndServices = () => {
               to enhancing physical, emotional, and spiritual well-being.
             </p>
             <p className="text-gray-700 text-base sm:text-lg mb-4 leading-relaxed">
-              Rooted in Siddha practices and supported by modern anatomy, our therapies aim 
-              to restore harmony using drug-free, non-invasive techniques.
+              Our therapies aim to restore harmony using natural, drug-free, non-invasive techniques.
             </p>
             <p className="text-gray-700 text-base sm:text-lg leading-relaxed mb-6 sm:mb-8">
               Each treatment is delivered by experienced professionals committed 

@@ -1,8 +1,7 @@
 import React, { useState } from "react";
+import { Helmet } from "react-helmet";
 import LeftIllustration from "../assets/illustration-left.jpg";
 import RightIllustration from "../assets/illustration-right.jpg";
-
-// Example backside images
 import back1 from "../assets/back1.webp";
 import back2 from "../assets/back3.webp";
 import back3 from "../assets/back2.webp";
@@ -20,7 +19,6 @@ const ServicesSection = () => {
     { title: "Yoga & Meditation", desc: "Balance body and mind.", icon: "🧘‍♀️", backImg: back6 },
   ];
 
-  // Track which card is flipped
   const [flippedCards, setFlippedCards] = useState(Array(services.length).fill(false));
 
   const handleFlip = (index) => {
@@ -33,6 +31,35 @@ const ServicesSection = () => {
 
   return (
     <section id="services" className="py-24 bg-gray-50 px-6 min-h-[110vh]">
+      {/* ✅ SEO Metadata */}
+      <Helmet>
+        <title>Our Services | Varma Therapy, Acupuncture, Chiropractic, Detox & Wellness</title>
+        <meta
+          name="description"
+          content="Explore holistic services at Agasthiyas Kathir Health Care Centre. Offering Varma Therapy, Acupuncture, Chiropractic, Detox Therapy, Massage Therapy, Yoga & Meditation to restore balance and wellness naturally."
+        />
+        <meta
+          name="keywords"
+          content="Varma Therapy, Acupuncture, Chiropractic, Detox Therapy, Massage Therapy, Yoga and Meditation, Holistic Health Services, Pain Relief Therapy, Natural Healing, Wellness Programs, Alternative Medicine, Stress Relief Therapy, Healing Centre Coimbatore, Traditional Therapy, Mind and Body Balance, Energy Healing, Wellness Treatments"
+        />
+        <meta name="author" content="Agasthiyas Kathir Health Care Centre" />
+        <meta property="og:title" content="Our Services | Varma Therapy, Acupuncture, Chiropractic, Detox & Wellness" />
+        <meta
+          property="og:description"
+          content="Discover holistic health services at Agasthiyas Kathir Health Care Centre: Varma Therapy, Acupuncture, Chiropractic, Detox, Massage, Yoga & Meditation for mind and body balance."
+        />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://yourwebsite.com/services" />
+        <meta property="og:image" content="https://yourwebsite.com/assets/back1.webp" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Our Services | Varma Therapy, Acupuncture, Chiropractic, Detox & Wellness" />
+        <meta
+          name="twitter:description"
+          content="Join Agasthiyas Kathir Health Care Centre for Varma Therapy, Acupuncture, Chiropractic, Detox, Massage Therapy, Yoga & Meditation to restore natural balance and wellness."
+        />
+        <meta name="twitter:image" content="https://yourwebsite.com/assets/back1.webp" />
+      </Helmet>
+
       <div className="w-full max-w-[1440px] mx-auto flex flex-col lg:flex-row items-center justify-between gap-8">
         {/* Left Illustration */}
         <div className="hidden lg:block w-1/5">
@@ -83,17 +110,18 @@ const ServicesSection = () => {
           .rotate-y-180 { transform: rotateY(180deg); }
         `}
       </style>
-        {/* Interactive Yin-Yang Symbol */}
-          <div className="mt-16 flex justify-center">
-            <div className="w-24 h-24 relative rounded-full overflow-hidden border-4 border-gray-800 rotate-45 hover:rotate-[405deg] transition-all duration-700 ease-in-out shadow-xl cursor-pointer bg-gradient-to-tr from-white via-gray-200 to-black">
-              <div className="absolute top-0 left-0 w-1/2 h-full bg-black flex justify-center items-center">
-                <div className="w-4 h-4 bg-white rounded-full" />
-              </div>
-              <div className="absolute top-0 right-0 w-1/2 h-full bg-white flex justify-center items-center">
-                <div className="w-4 h-4 bg-black rounded-full" />
-              </div>
-            </div>
+
+      {/* Interactive Yin-Yang Symbol */}
+      <div className="mt-16 flex justify-center">
+        <div className="w-24 h-24 relative rounded-full overflow-hidden border-4 border-gray-800 rotate-45 hover:rotate-[405deg] transition-all duration-700 ease-in-out shadow-xl cursor-pointer bg-gradient-to-tr from-white via-gray-200 to-black">
+          <div className="absolute top-0 left-0 w-1/2 h-full bg-black flex justify-center items-center">
+            <div className="w-4 h-4 bg-white rounded-full" />
           </div>
+          <div className="absolute top-0 right-0 w-1/2 h-full bg-white flex justify-center items-center">
+            <div className="w-4 h-4 bg-black rounded-full" />
+          </div>
+        </div>
+      </div>
     </section>
   );
 };
