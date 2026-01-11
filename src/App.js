@@ -10,7 +10,7 @@ import Gallery from './component/Gallery';
 import AcademySection from './component/Academy';
 import WhatsAppChatButton from "./component/WhatsAppChatButton";
 import FitnessClasses from './component/fitnessclasses';
-import Phone from './component/phone';
+
 import Autoscroll from './component/autoscroll';
 
 
@@ -20,7 +20,7 @@ function App() {
       <Nav />
       <Autoscroll />
       
-      <Phone />
+    
       <Gallery />
       <AcademySection />
       
