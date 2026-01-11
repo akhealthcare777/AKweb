@@ -1,7 +1,11 @@
 import React, { useState } from "react";
 import { Helmet } from "react-helmet";
-import LeftIllustration from "../assets/illustration-left.jpg";
-import RightIllustration from "../assets/illustration-right.jpg";
+import { 
+  Leaf, Activity, Syringe, Droplets, 
+  Smile, Heart, RotateCw, ArrowRight 
+} from "lucide-react";
+
+// Keep your existing image imports
 import back1 from "../assets/back1.webp";
 import back2 from "../assets/back3.webp";
 import back3 from "../assets/back2.webp";
@@ -11,12 +15,66 @@ import back6 from "../assets/back6.webp";
 
 const ServicesSection = () => {
   const services = [
-    { title: "Varma Therapy", desc: "Traditional healing using pressure points.", icon: "🌿", backImg: back1 },
-    { title: "Chiropractic", desc: "Spinal alignment Pain relief Posture correction  Lifestyle balance", icon: "🍃", backImg: back2 },
-    { title: "Acupuncture", desc: "Needle therapy to release blockages.", icon: "🧬", backImg: back3 },
-    { title: "Detox Therapy", desc: "Flush toxins with natural techniques.", icon: "💧", backImg: back4 },
-    { title: "Massage Therapy", desc: "Stress relief with therapeutic massages.", icon: "💆‍♂️", backImg: back5 },
-    { title: "Yoga & Meditation", desc: "Balance body and mind.", icon: "🧘‍♀️", backImg: back6 },
+    { 
+      id: 1,
+      title: "Varma Therapy", 
+      short: "Pressure Point Healing",
+      desc: "Ancient Tamil Siddha healing art. We manipulate vital energy points (Varmam) to cure nerve disorders and joint pain without medicine.", 
+      icon: <Leaf className="w-8 h-8" />, 
+      backImg: back1,
+      color: "bg-emerald-50 text-emerald-700"
+    },
+    { 
+      id: 2,
+      title: "Chiropractic", 
+      short: "Spinal Alignment",
+      desc: "Non-invasive spinal adjustments to correct posture and relieve chronic back pain.",
+      // Educational Diagram Trigger
+      diagram: true, 
+      diagramText: "View Vertebral Chart",
+      icon: <Activity className="w-8 h-8" />, 
+      backImg: back2,
+      color: "bg-blue-50 text-blue-700"
+    },
+    { 
+      id: 3,
+      title: "Acupuncture", 
+      short: "Energy Flow Therapy",
+      desc: "Fine needle insertion to unblock Qi flow along meridian channels.",
+      // Educational Diagram Trigger
+      diagram: true,
+      diagramText: "View Meridian Map",
+      icon: <Syringe className="w-8 h-8" />, 
+      backImg: back3,
+      color: "bg-amber-50 text-amber-700"
+    },
+    { 
+      id: 4,
+      title: "Detox Therapy", 
+      short: "Natural Purification",
+      desc: "Eliminate toxins through purgation, herbal steam, and dietary adjustments.", 
+      icon: <Droplets className="w-8 h-8" />, 
+      backImg: back4,
+      color: "bg-cyan-50 text-cyan-700"
+    },
+    { 
+      id: 5,
+      title: "Massage Therapy", 
+      short: "Deep Relaxation",
+      desc: "Therapeutic oil massage to improve circulation, reduce stress hormones, and relax muscle tension.", 
+      icon: <Smile className="w-8 h-8" />, 
+      backImg: back5,
+      color: "bg-rose-50 text-rose-700"
+    },
+    { 
+      id: 6,
+      title: "Yoga & Meditation", 
+      short: "Mind-Body Balance",
+      desc: "Guided Asanas and Pranayama to restore mental clarity and physical flexibility.", 
+      icon: <Heart className="w-8 h-8" />, 
+      backImg: back6,
+      color: "bg-violet-50 text-violet-700"
+    },
   ];
 
   const [flippedCards, setFlippedCards] = useState(Array(services.length).fill(false));
@@ -30,97 +88,121 @@ const ServicesSection = () => {
   };
 
   return (
-    <section id="services" className="py-24 bg-gray-50 px-6 min-h-[110vh]">
-      {/* ✅ SEO Metadata */}
-      <Helmet>
-        <title>Our Services | Varma Therapy, Acupuncture, Chiropractic, Detox & Wellness</title>
-        <meta
-          name="description"
-          content="Explore holistic services at Agasthiyas Kathir Health Care Centre. Offering Varma Therapy, Acupuncture, Chiropractic, Detox Therapy, Massage Therapy, Yoga & Meditation to restore balance and wellness naturally."
-        />
-        <meta
-          name="keywords"
-          content="Varma Therapy, Acupuncture, Chiropractic, Detox Therapy, Massage Therapy, Yoga and Meditation, Holistic Health Services, Pain Relief Therapy, Natural Healing, Wellness Programs, Alternative Medicine, Stress Relief Therapy, Healing Centre Coimbatore, Traditional Therapy, Mind and Body Balance, Energy Healing, Wellness Treatments"
-        />
-        <meta name="author" content="Agasthiyas Kathir Health Care Centre" />
-        <meta property="og:title" content="Our Services | Varma Therapy, Acupuncture, Chiropractic, Detox & Wellness" />
-        <meta
-          property="og:description"
-          content="Discover holistic health services at Agasthiyas Kathir Health Care Centre: Varma Therapy, Acupuncture, Chiropractic, Detox, Massage, Yoga & Meditation for mind and body balance."
-        />
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://yourwebsite.com/services" />
-        <meta property="og:image" content="https://yourwebsite.com/assets/back1.webp" />
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Our Services | Varma Therapy, Acupuncture, Chiropractic, Detox & Wellness" />
-        <meta
-          name="twitter:description"
-          content="Join Agasthiyas Kathir Health Care Centre for Varma Therapy, Acupuncture, Chiropractic, Detox, Massage Therapy, Yoga & Meditation to restore natural balance and wellness."
-        />
-        <meta name="twitter:image" content="https://yourwebsite.com/assets/back1.webp" />
-      </Helmet>
-
-      <div className="w-full max-w-[1440px] mx-auto flex flex-col lg:flex-row items-center justify-between gap-8">
-        {/* Left Illustration */}
-        <div className="hidden lg:block w-1/5">
-          <img src={LeftIllustration} alt="Illustration-left" className="w-full h-auto" />
-        </div>
-
-        {/* Services Content */}
-        <div className="w-full lg:w-3/5 text-center">
-          <h2 className="text-4xl font-bold mb-16 text-gray-900">Our Services</h2>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
-            {services.map(({ title, desc, icon, backImg }, idx) => (
-              <div key={title} className="perspective cursor-pointer" onClick={() => handleFlip(idx)}>
-                <div
-                  className={`relative w-full h-[300px] transition-transform duration-700 transform-style preserve-3d ${
-                    flippedCards[idx] ? "rotate-y-180" : ""
-                  }`}
-                >
-                  {/* Front */}
-                  <div className="absolute inset-0 bg-white rounded-2xl p-10 shadow-md border backface-hidden flex flex-col items-center justify-center">
-                    <div className="text-4xl mb-6">{icon}</div>
-                    <h3 className="text-2xl font-semibold mb-3 text-gray-800">{title}</h3>
-                    <p className="text-gray-600 text-base">{desc}</p>
-                    <span className="text-sm text-blue-600 mt-4">(Tap to flip)</span>
-                  </div>
-
-                  {/* Back */}
-                  <div className="absolute inset-0 rounded-2xl overflow-hidden backface-hidden rotate-y-180">
-                    <img src={backImg} alt={title} className="w-full h-full object-cover" />
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Right Illustration */}
-        <div className="hidden lg:block w-1/5">
-          <img src={RightIllustration} alt="Illustration-right" className="w-full h-auto" />
-        </div>
+    <section id="services" className="relative py-24 bg-stone-50 min-h-screen font-sans overflow-hidden">
+      
+      {/* Background Texture */}
+      <div className="absolute inset-0 opacity-[0.03] pointer-events-none" 
+           style={{ backgroundImage: 'radial-gradient(#22c55e 1px, transparent 1px)', backgroundSize: '40px 40px' }}>
       </div>
 
-      <style>
-        {`
-          .perspective { perspective: 1000px; }
-          .preserve-3d { transform-style: preserve-3d; }
-          .backface-hidden { backface-visibility: hidden; }
-          .rotate-y-180 { transform: rotateY(180deg); }
-        `}
-      </style>
+      <Helmet>
+        <title>Holistic Services | Varma, Chiropractic & Acupuncture</title>
+      </Helmet>
 
-      {/* Interactive Yin-Yang Symbol */}
-      <div className="mt-16 flex justify-center">
-        <div className="w-24 h-24 relative rounded-full overflow-hidden border-4 border-gray-800 rotate-45 hover:rotate-[405deg] transition-all duration-700 ease-in-out shadow-xl cursor-pointer bg-gradient-to-tr from-white via-gray-200 to-black">
-          <div className="absolute top-0 left-0 w-1/2 h-full bg-black flex justify-center items-center">
-            <div className="w-4 h-4 bg-white rounded-full" />
-          </div>
-          <div className="absolute top-0 right-0 w-1/2 h-full bg-white flex justify-center items-center">
-            <div className="w-4 h-4 bg-black rounded-full" />
+      <div className="max-w-7xl mx-auto px-6 relative z-10">
+        
+        {/* Header */}
+        <div className="text-center mb-20">
+          <span className="text-green-600 font-bold tracking-widest text-xs uppercase mb-3 block">
+            Our Expertise
+          </span>
+          <h2 className="text-4xl md:text-5xl font-serif font-bold text-slate-900 mb-6">
+            Therapies for the <br />
+            <span className="italic text-green-800">Mind, Body & Spirit</span>
+          </h2>
+          <p className="text-slate-600 max-w-2xl mx-auto">
+            Tap a card to reveal treatment details.
+          </p>
+        </div>
+
+        {/* Card Grid */}
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
+          {services.map((service, idx) => (
+            <div 
+              key={service.id} 
+              className="group h-[380px] cursor-pointer [perspective:1000px]" 
+              onClick={() => handleFlip(idx)}
+            >
+              <div
+                className={`relative w-full h-full duration-700 transition-all [transform-style:preserve-3d] ${
+                  flippedCards[idx] ? "[transform:rotateY(180deg)]" : ""
+                }`}
+              >
+                {/* ================= FRONT SIDE ================= */}
+                <div className="absolute inset-0 w-full h-full bg-white rounded-3xl p-8 shadow-xl shadow-slate-200/60 border border-white flex flex-col items-center text-center justify-between z-20 [backface-visibility:hidden]">
+                  
+                  <div className={`w-16 h-16 rounded-2xl flex items-center justify-center mb-6 ${service.color}`}>
+                    {service.icon}
+                  </div>
+
+                  <div>
+                    <h3 className="text-2xl font-serif font-bold text-slate-900 mb-2">
+                      {service.title}
+                    </h3>
+                    <p className="text-slate-400 font-medium text-sm tracking-wide uppercase">
+                      {service.short}
+                    </p>
+                  </div>
+
+                  <div className="mt-6 flex items-center gap-2 text-sm font-bold text-green-700 opacity-60 group-hover:opacity-100 transition-opacity">
+                    <RotateCw className="w-4 h-4" />
+                    <span>Tap to Flip</span>
+                  </div>
+                </div>
+
+                {/* ================= BACK SIDE ================= */}
+                <div className="absolute inset-0 w-full h-full rounded-3xl overflow-hidden shadow-2xl bg-slate-900 [transform:rotateY(180deg)] [backface-visibility:hidden]">
+                  
+                  {/* Background Image */}
+                  <img src={service.backImg} alt={service.title} className="absolute inset-0 w-full h-full object-cover opacity-60" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/70 to-black/30"></div>
+
+                  {/* Content */}
+                  <div className="relative z-10 h-full p-8 flex flex-col justify-center items-center text-center text-white">
+                    <div className="mb-4 text-green-400 scale-75">
+                      {service.icon}
+                    </div>
+                    
+                    <h3 className="text-xl font-bold mb-3">{service.title}</h3>
+                    
+                    <p className="text-slate-200 text-sm leading-relaxed mb-6">
+                      {service.desc}
+                    </p>
+
+                    {/* Diagram Link (Visual Only) */}
+                    {service.diagram && (
+                      <div className="text-[10px] text-green-300/80 italic mb-4 border border-green-300/30 px-3 py-1 rounded-full flex items-center gap-1">
+                         <Activity className="w-3 h-3" />
+                         {service.diagramText}
+                      </div>
+                    )}
+
+                    <button className="bg-white text-slate-900 px-6 py-2 rounded-full text-sm font-bold hover:bg-green-50 transition flex items-center gap-2">
+                      Book Now <ArrowRight className="w-3 h-3" />
+                    </button>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* ================= FIXED YIN YANG SVG ================= */}
+        <div className="mt-24 flex justify-center">
+          <div className="relative group cursor-pointer animate-[spin_10s_linear_infinite] hover:animate-[spin_3s_linear_infinite]" title="Balance">
+             {/* Simple SVG Yin Yang */}
+             <svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" className="drop-shadow-2xl">
+                <circle cx="50" cy="50" r="48" fill="white" stroke="#1e293b" strokeWidth="2"/>
+                <path d="M50 2A48 48 0 0 0 50 98A24 24 0 0 1 50 50A24 24 0 0 0 50 2Z" fill="#1e293b"/>
+                <circle cx="50" cy="26" r="6" fill="white"/>
+                <circle cx="50" cy="74" r="6" fill="#1e293b"/>
+             </svg>
+             {/* Glow Effect */}
+             <div className="absolute inset-0 bg-green-500 blur-2xl opacity-0 group-hover:opacity-30 transition-opacity"></div>
           </div>
         </div>
+
       </div>
     </section>
   );
