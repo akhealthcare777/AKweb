@@ -1,6 +1,9 @@
 import React from "react";
 import { User, Calendar, Award, Linkedin, Mail } from "lucide-react";
 import kathirvelImg from "../assets/kathirvel.jpg";
+import prasanthimg from "../assets/prasnthimg.png";
+import Rajiimg from "../assets/Rajiimg.jpeg";
+import Teena from "../assets/heenaimg.jpeg";
 
 const TeamSection = () => {
   const teamMembers = [
@@ -16,26 +19,28 @@ const TeamSection = () => {
     {
       id: 2,
       name: "Heena",
-      role: "Acupuncture Specialist",
-      initials: "H",
-      gradient: "from-teal-400 to-emerald-600",
-      bio: "Certified Specialist"
+     img: Teena,
+      badge: "Acupuncturist",
+      bio: "2+ Years Exp",
+      socials: true
     },
     {
       id: 3,
       name: "Prasanth",
       role: "Yoga Instructor",
-      initials: "P",
-      gradient: "from-blue-400 to-indigo-600",
-      bio: "Wellness Expert"
+     img: prasanthimg,
+      badge: "Healer",
+      bio: "2+ Years Exp",
+      socials: true
     },
     {
       id: 4,
       name: "Raji",
       role: "Beauty Therapist",
-      initials: "R",
-      gradient: "from-rose-400 to-pink-600",
-      bio: "Skin Care Pro"
+     img: Rajiimg,
+     badge: "Skin care",
+      bio: "1+ Years Exp",
+      socials: true
     },
   ];
 
